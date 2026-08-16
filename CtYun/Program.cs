@@ -269,6 +269,12 @@ async Task KeepAliveWorker(CtYunApi api, AccountConfig account, Desktop desktop,
         {
             break;
         }
+        catch (WebSocketException ex) when (ex.WebSocketErrorCode == WebSocketError.ConnectionClosedPrematurely
+                                            || ex.Message.Contains("closed the WebSocket connection", StringComparison.Ordinal))
+        {
+            // 服务端回收连接（不打关闭握手直接断开），属于正常现象，重连即可
+            Utility.WriteLine(ConsoleColor.DarkYellow, $"[{label}][{desktop.DesktopCode}] 连接被服务端回收（正常现象），自动重连...");
+        }
         catch (Exception ex)
         {
             Utility.WriteLine(ConsoleColor.Red, $"[{label}][{desktop.DesktopCode}] 异常: {ex.Message}");

@@ -11,7 +11,7 @@
 - **桌面白名单**：只保活指定云电脑；默认跳过未开机电脑（不再意外触发开机）
 - **selftest 自检**：`CtYun.exe selftest` 无需账号即可验证识别链路
 
-详细说明与完整配置项见 [优化说明.md](优化说明.md)。
+详细说明与完整配置项见 [OPTIMIZATION.md](OPTIMIZATION.md)。
 
 ## 快速开始（Windows 10+，免安装）
 

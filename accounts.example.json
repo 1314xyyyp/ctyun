@@ -1,0 +1,13 @@
+{
+  "keepAliveSeconds": 900,
+  "connectOfflineDesktops": false,
+  "sessionCacheHours": 24,
+  "accounts": [
+    {
+      "name": "main",
+      "user": "你的手机号",
+      "password": "你的密码",
+      "desktops": []
+    }
+  ]
+}
